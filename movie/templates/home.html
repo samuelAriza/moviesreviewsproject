@@ -8,7 +8,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome to Home Page, <span>{{name}}</span></h1>
-    <h2>This is the full home page</h2>
+    <form action="">
+        <div class="mb-3">
+            <label for="searchMovie" class="form-label">Search for Movie:</label>
+            <input type="text" class="form-control" name="searchMovie">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <p>Searching for {{searchItem}}</p>
+    {% for movie in movies %}
+        <h2>{{movie.title}}</h2>
+        <h3>{{movie.description}}</h3>
+        <img src="{{movie.image.url}}" alt="">
+        {% if movie.url %}
+            <a href="{{movie.url}}">Movie link</a>
+        {% endif %}
+    {% endfor %}
 </body>
 </html>
