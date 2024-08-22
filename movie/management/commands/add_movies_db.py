@@ -19,4 +19,5 @@ class Command(BaseCommand):
                 Movie.objects.create(title = movie['title'], 
                                      image = 'movie/images/movie.jpeg',
                                      genre = movie['genre'],
-                                     year = movie['year'])
+                                     year = movie['year'],
+                                     description = movie['plot'])

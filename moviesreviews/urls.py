@@ -23,7 +23,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', movieViews.home),
+    path('', movieViews.home, name='home'),
     path('about/', movieViews.about),
-    path('news/', include('news.urls')),
+    path('news/', include('news.urls'), name='news'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
